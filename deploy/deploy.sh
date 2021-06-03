@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Busca nome da stack"
 STACK=$(jq '.nome' -r pipeline.json)
-echo $STACK
+echo ${STACK}
 
 echo "Valida template"
 cfn-lint "${GITHUB_WORKSPACE}/infra/template.yml" --no-fail-on-empty-changeset
