@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Busca nome da stark"
-var STACK = $(jq '.nome' -r pipelines.json)
+var STACK = $(jq '.nome' -r pipeline.json)
 
 echo "Valida template"
 cfn-lint "${GITHUB_WORKSPACE}/infra/template.yml" --no-fail-on-empty-changeset
